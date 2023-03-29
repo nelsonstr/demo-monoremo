@@ -1,0 +1,7 @@
+{
+  ".": "0.0.12",
+  "libs/hello": "0.0.1",
+  "services/one": "0.0.20",
+  "services/test": "0.0.15",
+  "services/two": "0.11.1"
+}

@@ -1,0 +1,28 @@
+{
+  "bump-minor-pre-major": true,
+  "bump-patch-for-minor-pre-major": true,
+  "draft": true,
+  "ignore-group-pull-request-title-pattern": "chore: release ${branch}",
+  "include-component-in-tag": false,
+  "packages": {
+    ".": {
+      "component": "main",
+      "release-as": "Main module"
+    },
+    "libs/hello": {
+      "component": "lib/hello",
+      "release-as": "lib hello"
+    },
+    "services/one": {
+      "component": "service/one",
+      "release-as": "services one"
+    },
+    "services/two": {
+      "component": "service/one",
+      "release-as": "services two"
+    }
+  },
+  "prerelease": true,
+  "release-type": "go-yoshi",
+  "separate-pull-requests": true
+}

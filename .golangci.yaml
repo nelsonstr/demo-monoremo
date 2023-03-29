@@ -1,0 +1,103 @@
+run:
+  skip-files:
+  - libs/protobuffer
+  timeout: 5m
+# https://github.com/golangci/golangci-lint/blob/26dde52d69335ac008cae5ae4aefbee54c8b5b5a/.golangci.reference.yml
+linters:
+  enable-all: true
+  disable:
+  # deprecated linters
+  - contextcheck
+  - deadcode
+  - exhaustive
+  - exhaustivestruct
+  - gochecknoglobals
+  - golint
+  - gosec
+  - gosimple
+  - govet
+  - ifshort
+  - interfacebloat
+  - interfacer
+  - ireturn
+  - maligned
+  - nosnakecase
+  - scopelint
+  - staticcheck
+  - structcheck
+  - stylecheck
+  - varcheck
+
+#linters presets
+#  presets:
+#    - bugs
+#    - error
+#    - complexity
+#    - performance
+#    - format
+#    - comment
+#    - import
+#    - module
+#    - sql
+#    - style
+#    - test
+#    - unused
+
+linters-settings:
+  gosec:
+    severity: medium
+    exclude-generated: true
+    exclude-dir:
+    - crypto
+    exclude:
+    - G302
+    - G306
+  dupl:
+    threshold: 100
+  funlen:
+    lines: 100
+    statements: 50
+  goconst:
+    min-len: 2
+    min-occurrences: 3
+  gocritic:
+    enabled-tags:
+    - diagnostic
+    - experimental
+    - opinionated
+    - performance
+    - style
+
+    disabled-checks:
+    - dupImport   # https://github.com/go-critic/go-critic/issues/845
+  gocyclo:
+    min-complexity: 15
+
+  gomnd:
+    # don't include the "operation" and "assign"
+    checks:
+    - argument
+    - case
+    - condition
+    - return
+    ignored-numbers:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+
+  lll:
+    line-length: 140
+  misspell:
+    locale: UK
+  nolintlint:
+    allow-unused: false # report any unused nolint directives
+    require-explanation: false # don't require an explanation for nolint directives
+    require-specific: false # don't require nolint directives to be specific about which linter is being skipped
+issues:
+  exclude-rules:
+  - path: (.+)_test\.go
+    linters:
+    - typecheck
+#output:
+#  format: json

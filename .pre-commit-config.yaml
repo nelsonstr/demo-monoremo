@@ -1,0 +1,127 @@
+exclude: vendor
+
+repos:
+- repo: https://github.com/qoomon/git-conventional-commits
+  rev: v2.6.3
+  hooks:
+  - id: conventional-commits
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.4.0
+  hooks:
+  - id: check-case-conflict
+  - id: check-json
+  - id: check-merge-conflict
+  - id: end-of-file-fixer
+  - id: mixed-line-ending
+  - id: sort-simple-yaml
+  - id: trailing-whitespace
+  - id: no-commit-to-branch
+    args: [--branch, main, --branch, developer]
+  - id: pretty-format-json
+    args:
+    - --autofix
+    - --top-keys
+    - $schema,name,private,version,main,repository,scripts,jest,dependencies,devDependencies
+
+- repo: https://github.com/zricethezav/gitleaks
+  rev: v8.16.1
+  hooks:
+  - id: gitleaks
+  - id: gitleaks-docker
+
+    # reference also
+# https://git.kernel.org/pub/scm/git/git.git/tree/Documentation/SubmittingPatches?h=v2.36.1#n181
+- repo: https://github.com/compilerla/conventional-pre-commit
+  rev: v2.1.1
+  hooks:
+  - id: conventional-pre-commit
+    stages: [commit-msg]
+    args: [feat, fix, ci, chore, test, build, docs, refactor, perf]
+
+- repo: https://github.com/igorshubovych/markdownlint-cli
+  rev: v0.33.0
+  hooks:
+  - id: markdownlint
+    args:
+    - --disable
+    - MD013
+  - id: markdownlint-fix
+    args:
+    - --disable
+    - MD013
+- repo: https://github.com/klieret/jekyll-relative-url-check
+  rev: v2.0.1
+  hooks:
+  - id: jekyll-relative-url-check-markdown
+
+  # docker
+- repo: https://github.com/IamTheFij/docker-pre-commit
+  rev: v2.1.1
+  hooks:
+  - id: docker-compose-check
+
+- repo: https://github.com/pryorda/dockerfilelint-precommit-hooks
+  rev: v0.1.0
+  hooks:
+  - id: dockerfilelint
+
+- repo: https://github.com/AleksaC/hadolint-py
+  rev: v2.12.0.2
+  hooks:
+  - id: hadolint
+
+  # golang
+- repo: https://github.com/TekWizely/pre-commit-golang
+  rev: v1.0.0-rc.1
+  hooks:
+  - id: go-returns
+    args: [-w]
+  - id: go-build-mod
+  - id: go-mod-tidy
+  - id: golangci-lint
+    args: [--fix]
+
+  # yaml json
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.4.0
+  hooks:
+  - id: check-yaml
+    args:
+    - --allow-multiple-documents
+
+- repo: https://github.com/adrienverge/yamllint
+  rev: v1.30.0
+  hooks:
+  - id: yamllint
+    args: [--format, parsable, --strict]
+
+- repo: https://github.com/python-jsonschema/check-jsonschema
+  rev: 0.22.0
+  hooks:
+  - id: check-github-actions        # Validate GitHub Actions against the schema provided by SchemaStore
+  - id: check-github-workflows      # Validate GitHub Workflows against the schema provided by SchemaStore
+  - id: check-gitlab-ci
+
+- repo: https://gitlab.com/smop/pre-commit-hooks
+  rev: v1.0.0
+  hooks:
+  - id: check-gitlab-ci
+
+- repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+  rev: v2.8.0
+  hooks:
+  - id: pretty-format-yaml
+    args: [--autofix, --indent, '2']
+
+- repo: https://github.com/Lucas-C/pre-commit-hooks
+  rev: v1.4.2
+  hooks:
+  - id: forbid-crlf
+  - id: remove-crlf
+  - id: insert-license
+    files: \.go$
+    args:
+    - --license-filepath
+    - LICENSE
+    - --comment-style
+    - /*||*/
