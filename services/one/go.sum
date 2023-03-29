@@ -12,8 +12,8 @@ github.com/mattn/go-isatty v0.0.14/go.mod h1:7GGIvUiUoEMVVmxf/4nioHXj79iQHKdU27k
 github.com/mattn/go-isatty v0.0.16/go.mod h1:kYGgaQfpe5nmfYZH+SKPsOc2e4SrIfOl2e/yFXSvRLM=
 github.com/mattn/go-isatty v0.0.17 h1:BTarxUcIeDqL27Mc+vyvdWYSL28zpIhv3RoTdsLMPng=
 github.com/mattn/go-isatty v0.0.17/go.mod h1:kYGgaQfpe5nmfYZH+SKPsOc2e4SrIfOl2e/yFXSvRLM=
-github.com/nelsonstr/monorepo/libs/hello v0.1.1 h1:PQ4CSIJph/oas0LGOPfUmsPtYYMOG0JjU74ZYYuVckA=
-github.com/nelsonstr/monorepo/libs/hello v0.1.1/go.mod h1:lWhNeq96KMkfiLa3vkQ8sR8YRJqLD/w1jei7fzZ881g=
+github.com/nelsonstr/demo-monorepo/libs/hello v0.0.5 h1:twpxzS7Jm5z01pNemltyFTBAg5wpKC/N9EASZXYHyOk=
+github.com/nelsonstr/demo-monorepo/libs/hello v0.0.5/go.mod h1:Eq2pSon9RRX0+ezFpBT6y13O3I7Qa7tCLpQ+tdq44vM=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=

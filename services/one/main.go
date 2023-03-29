@@ -8,7 +8,7 @@ import (
 	"net/http"
 
 	echo "github.com/labstack/echo/v4"
-	"github.com/nelsonstr/monorepo/libs/hello"
+	"github.com/nelsonstr/demo-monorepo/libs/hello"
 )
 
 func main() {
