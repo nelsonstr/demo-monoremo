@@ -1,6 +1,6 @@
 module github.com/nelsonstr/monorepo/services/two
 
-go 1.19
+go 1.20
 
 //replace github.com/nelsonstr/monorepo/libs/hello => ../../libs/hello
 
